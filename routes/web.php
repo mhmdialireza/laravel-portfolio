@@ -1,32 +1,37 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Admin\BlogController;
-use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\AboutController;
-use App\Http\Controllers\Admin\ServiceController;
-use App\Http\Controllers\Admin\SettingController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\FeedbackController;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\SkillItemController;
-use App\Http\Controllers\Admin\TyperTitleContoller;
-use App\Http\Controllers\Admin\ExperienceController;
-use App\Http\Controllers\Admin\FooterInfoController;
-use App\Http\Controllers\Admin\SeoSettingController;
 use App\Http\Controllers\Admin\BlogCategoryController;
-use App\Http\Controllers\Admin\PortfolioItemController;
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\BlogSectionSettingController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ContactSectionSettingController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ExperienceController;
+use App\Http\Controllers\Admin\FeedbackController;
+use App\Http\Controllers\Admin\FeedbackSectionSettingController;
+use App\Http\Controllers\Admin\FooterContactInfoController;
 use App\Http\Controllers\Admin\FooterHelpLinkController;
-use App\Http\Controllers\Admin\GeneralSettingController;
+use App\Http\Controllers\Admin\FooterInfoController;
 use App\Http\Controllers\Admin\FooterSocialLinkController;
 use App\Http\Controllers\Admin\FooterUsefulLinkController;
-use App\Http\Controllers\Admin\FooterContactInfoController;
-use App\Http\Controllers\Admin\BlogSectionSettingController;
-use App\Http\Controllers\Admin\SkillSectionSettingController;
-use App\Http\Controllers\Admin\ContactSectionSettingController;
-use App\Http\Controllers\Admin\FeedbackSectionSettingController;
+use App\Http\Controllers\Admin\GeneralSettingController;
+use App\Http\Controllers\Admin\HeroController;
+use App\Http\Controllers\Admin\PortfolioItemController;
+use App\Http\Controllers\Admin\PortfolioSectionSetting;
 use App\Http\Controllers\Admin\PortfolioSectionSettingController;
+use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\SeoSettingController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\SkillItemController;
+use App\Http\Controllers\Admin\SkillSectionSettingController;
+use App\Http\Controllers\Admin\TyperTitleContoller;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Models\FooterInfo;
+use App\Models\SkillSectionSetting;
+use Illuminate\Foundation\Console\AboutCommand;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,10 +39,19 @@ use App\Http\Controllers\Admin\PortfolioSectionSettingController;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
+
+/** Frontend Routes */
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('portfolio-details/{id}', [HomeController::class, 'showPortfolio'])->name('show.portfolio');
+Route::get('blog-details/{id}', [HomeController::class, 'showBlog'])->name('show.blog');
+Route::get('blogs', [HomeController::class, 'blog'])->name('blog');
+Route::post('contact', [HomeController::class, 'contact'])->name('contact');
+
 
 /** Admin Routes */
 
