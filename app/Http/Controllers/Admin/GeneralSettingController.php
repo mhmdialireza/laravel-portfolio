@@ -15,7 +15,14 @@ class GeneralSettingController extends Controller
      */
     public function index()
     {
-        $setting = GeneralSetting::first();
+        $setting = GeneralSetting::latest()->first();
+        if (!$setting) {
+            $setting = GeneralSetting::create([
+                'logo' => 'default/logo.png',
+                'footer_logo' => 'default/logo.png',
+                'favicon' => 'default/logo.png',
+            ]);
+        }
         return view('admin.setting.general-setting.index', compact('setting'));
     }
 
@@ -72,26 +79,25 @@ class GeneralSettingController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'logo' => ['required', 'max:5000', 'image'],
-            'footer_logo' => ['required', 'max:5000', 'image'],
-            'favicon' => ['required', 'max:5000', 'image'],
+            'logo' => ['sometimes', 'max:5000', 'image'],
+            'footer_logo' => ['sometimes', 'max:5000', 'image'],
+            'favicon' => ['sometimes', 'max:5000', 'image'],
         ]);
 
-        $setting = GeneralSetting::first();
+        $setting = GeneralSetting::latest()->first();
         $logo = handleUpload('logo', $setting);
-        $footer_logo = handleUpload('footer_logo', $setting);
+        $footerLogo = handleUpload('footer_logo', $setting);
         $favicon = handleUpload('favicon', $setting);
 
         $generalSetting = new GeneralSetting();
         $generalSetting->logo = (!empty($logo)) ? $logo : $setting->logo;
-        $generalSetting->footer_logo = (!empty($footer_logo)) ? $footer_logo : $setting->footer_logo;
+        $generalSetting->footer_logo = (!empty($footerLogo)) ? $footerLogo : $setting->footer_logo;
         $generalSetting->favicon = (!empty($favicon)) ? $favicon : $setting->favicon;
         $generalSetting->save();
 
         toastr('Update Successfully', 'success');
 
         return redirect()->back();
-
     }
 
     /**
