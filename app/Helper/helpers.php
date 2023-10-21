@@ -8,7 +8,7 @@ function handleUpload($inputName, $model = null)
 {
     try {
         if (request()->hasFile($inputName)) {
-            if ($model && \File::exists(public_path($model->{$inputName})) && $model->{$inputName} != 'default/logo.png') {
+            if ($model && \File::exists(public_path($model->{$inputName})) && str_contains($model->{$inputName}, '/uploads/')) {
                 \File::delete(public_path($model->{$inputName}));
             }
 

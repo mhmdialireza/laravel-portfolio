@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class FooterHelpLink extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'url',
+    ];
 }

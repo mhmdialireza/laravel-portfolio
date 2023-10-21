@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class FooterSocialLink extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'icon',
+        'url',
+    ];
 }
