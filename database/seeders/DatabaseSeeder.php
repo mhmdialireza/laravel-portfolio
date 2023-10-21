@@ -80,7 +80,7 @@ class DatabaseSeeder extends Seeder
             'description' => $description
         ]);
         Blog::create([
-            'image' => 'Understanding the Basics of Cryptocurrency Trading',
+            'image' => '/default/909175450michal-kubalczyk-WecngmAT-KY-unsplash.jpg',
             'title' => 'The Importance of Emotional Intelligence in the Workplace',
             'category' => 2,
             'description' => $description
