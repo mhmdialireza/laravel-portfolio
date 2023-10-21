@@ -4,15 +4,15 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://raw.githubusercontent.com/mhmdialireza/laravel-portfolio/main/screenshots/1.png" alt="project-screenshot" width="1200px" height="500px/">
+<img src="https://raw.githubusercontent.com/mhmdialireza/laravel-portfolio/main/screenshots/1.png" alt="project-screenshot" width="1200px" height="400px/">
 
-<img src="https://raw.githubusercontent.com/mhmdialireza/laravel-portfolio/main/screenshots/2.png" alt="project-screenshot" width="1200px" height="500px/">
+<img src="https://raw.githubusercontent.com/mhmdialireza/laravel-portfolio/main/screenshots/2.png" alt="project-screenshot" width="1200px" height="400px/">
 
-<img src="https://raw.githubusercontent.com/mhmdialireza/laravel-portfolio/main/screenshots/3.png" alt="project-screenshot" width="1200px" height="500px/">
+<img src="https://raw.githubusercontent.com/mhmdialireza/laravel-portfolio/main/screenshots/3.png" alt="project-screenshot" width="1200px" height="400px/">
 
-<img src="https://raw.githubusercontent.com/mhmdialireza/laravel-portfolio/main/screenshots/4.png" alt="project-screenshot" width="1200px" height="500px/">
+<img src="https://raw.githubusercontent.com/mhmdialireza/laravel-portfolio/main/screenshots/4.png" alt="project-screenshot" width="1200px" height="400px/">
 
-<img src="https://raw.githubusercontent.com/mhmdialireza/laravel-portfolio/main/screenshots/5.png" alt="project-screenshot" width="1200px" height="500px/">
+<img src="https://raw.githubusercontent.com/mhmdialireza/laravel-portfolio/main/screenshots/5.png" alt="project-screenshot" width="1200px" height="400px/">
 
 <h2>🛠️ Installation Steps:</h2>
 
